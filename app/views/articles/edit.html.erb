@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Edit Article</h2>
+  <div class="container-form">
+    <h3 class="error"> <%= @error_message %></h3>
+    <%= form_for @article do |f| %>
+      <div class="container-input">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+      <div class="container-input">
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+      </div>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <div class="backlinks">
+    <%= link_to articles_path do %>
+    <button>BACK TO ALL</button>
+    <% end %>
+  </div>
+</div>

@@ -21,6 +21,20 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to article_path(@article)
+    else
+      @error_message = 'Inputs invalid. Please try again.'
+      render 'edit.html.erb'
+    end
+  end
+
   private
 
   def article_params

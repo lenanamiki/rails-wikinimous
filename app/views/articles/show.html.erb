@@ -4,6 +4,8 @@
     <p><%= @article.content %></p>
   </div>
 
+  <%= link_to "edit", edit_article_path %>
+
   <div class="backlinks">
     <%= link_to articles_path do %>
     <button>BACK TO ALL</button>
